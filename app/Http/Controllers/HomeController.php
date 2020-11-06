@@ -51,12 +51,16 @@ class HomeController extends Controller
         return  redirect('/home');
     }
     public function update(Request $request,$id){
+        try {
         $contacto = Contacto::find($request->id_form);
         $contacto->con_nome= $request->nome_form;
         $contacto->con_numero= $request->email_form;
         $contacto->con_email= $request->numero_form;
         $contacto->user_id= 1;
         $contacto->save();
-        return  redirect('/home');
+        return  redirect('/home')->with('sucess','Contacto atualizado com sucesso ');
+        }catch (\Exception $erro){
+            return redirect('/home')->with('error','erro atualizar');
+        }
     }
 }

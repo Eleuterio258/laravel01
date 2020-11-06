@@ -15,7 +15,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nomer</th>
+                        <th>Nome</th>
                         <th>Email</th>
                         <th>Numero</th>
                         <th>Opções</th>
